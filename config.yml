@@ -1,0 +1,12 @@
+---
+:api_key: 6cf3205ddca26262c1c89c52a742d242
+:password: 54403925266cc85bb4040bd9461460db
+:store: chrrroma.myshopify.com
+:theme_id: 
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/

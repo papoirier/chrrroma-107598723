@@ -1,0 +1,58 @@
+{% comment %}
+  Re-use the 'rte' class wherever you output content that was added by a merchant using the Rich Text Editor ( 'rte' stands for rich text editor ).
+  Style all HTML elements in that content the same way across the board.
+  Use the 'rte' class in your CSS to help maintain that consistency.
+  Example: the h2 element should have the same size and color in:
+  - product descriptions
+  - collection descriptions
+  - page content
+  - blog posts
+{% endcomment %}
+
+{% comment %}
+  Very important reading:
+  http://docs.shopify.com/themes/liquid-basics/what-is-true-and-false-in-liquid
+  Learn how to read theme settings in your theme.
+{% endcomment %}
+
+{% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
+{% assign page = pages[settings.homepage_page] %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" role="banner">
+      <div class="intro-logo">
+        {{ 'logo.png' | asset_url | img_tag: shop.name, 'img-fluid'}}
+      </div>
+      <div class="intro-mobile-img">
+      </div>
+      <div class="intro-text">
+        {{ page.content }}
+      </div>
+      
+      {% comment %}
+        Many SEO audit tools look for a h1 tag on the home page. Let's give 'em one.
+        Other pages should use the resource name as h1 tag. For example, on the product
+        page, the product title will use a h1 tag.
+      {% endcomment %}
+      <h1 class="hidden-xs-up">CHROMA</h1>
+      
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
+{% assign collection = collections[settings.homepage_collection] %}
+<ul class="grid clearfix">
+{% for product in collection.products %}
+  {% include 'product-grid-item' with 'col-md-4' %}
+{% else %}
+<li>
+  <p>
+    You have no products in your {{ collections[settings.homepage_collection].title }} collection. 
+    <a href="http://www.shopify.com/admin/collections">Add some.</a>
+  <p>
+</li>
+{% endfor %}
+</ul>
+{% endunless %}

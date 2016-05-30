@@ -1,0 +1,56 @@
+// eot
+@font-face {
+    font-family: MarkWeb;
+    src: url('{{ "MarkWeb.eot" | asset_url }}');
+}
+@font-face {
+    font-family: MarkWebBold;
+    src: url('{{ "MarkWeb-Bold.eot" | asset_url }}');
+
+}
+@font-face {
+    font-family: MarkScWeb;
+    src: url('{{ "MarkScWeb.eot" | asset_url }}');
+}
+@font-face {
+    font-family: MarkScWebBold;
+    src: url('{{ "MarkScWeb-Bold.eot" | asset_url }}');
+}
+
+// woff 
+@font-face {
+    font-family: MarkWeb;
+    src: url('{{ "MarkWeb.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: MarkWebBold;
+    src: url('{{ "MarkWeb-Bold.woff" | asset_url }}') format("woff");
+    font-weight: bold;
+}
+@font-face {
+    font-family: MarkScWeb;
+    src: url('{{ "MarkScWeb.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: MarkScWeb;
+    src: url('{{ "MarkScWeb-Bold.woff" | asset_url }}') format("woff");
+    font-weight: bold; 
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+header,
+footer {
+    font-family: MarkWeb;
+    font-style: normal;
+    font-weight: normal;
+}
