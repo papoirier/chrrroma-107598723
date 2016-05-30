@@ -41,18 +41,30 @@
 </div>
 {% endunless %}
 
-{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
-{% assign collection = collections[settings.homepage_collection] %}
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with 'col-md-4' %}
-{% else %}
-<li>
-  <p>
-    You have no products in your {{ collections[settings.homepage_collection].title }} collection. 
-    <a href="http://www.shopify.com/admin/collections">Add some.</a>
-  <p>
-</li>
-{% endfor %}
-</ul>
-{% endunless %}
+{% comment %}
+  Collection handles:
+    - felt
+    - sample
+    - baskets
+{% endcomment %}
+
+
+
+
+<div class="container">
+  <div class="row felt">
+    {% for product in collections.felt.products %}
+      {% include 'product-grid-item' with 'col-md-4' %}
+    {% endfor %}
+  </div> <!-- /.row.felt -->
+  <div class="row felt">
+    {% for product in collections.baskets.products %}
+      {% include 'product-grid-item' with 'col-md-4' %}
+    {% endfor %}
+  </div> <!-- /.row.felt -->
+  <div class="row felt">
+    {% for product in collections.sample.products %}
+      {% include 'product-grid-item' with 'col-md-4' %}
+    {% endfor %}
+  </div> <!-- /.row.felt -->
+</div>
