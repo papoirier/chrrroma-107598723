@@ -57,14 +57,14 @@
       {% include 'product-grid-item' with 'col-md-4' %}
     {% endfor %}
   </div> <!-- /.row.felt -->
-  <div class="row felt">
+  <div class="row baskets">
     {% for product in collections.baskets.products %}
       {% include 'product-grid-item' with 'col-md-4' %}
     {% endfor %}
-  </div> <!-- /.row.felt -->
-  <div class="row felt">
+  </div> <!-- /.row.baskets -->
+  <div class="row sample">
     {% for product in collections.sample.products %}
-      {% include 'product-grid-item' with 'col-md-4' %}
+      {% include 'product-grid-item' with 'col-md-4 col-md-offset-4' %}
     {% endfor %}
-  </div> <!-- /.row.felt -->
+  </div> <!-- /.row.sample -->
 </div>

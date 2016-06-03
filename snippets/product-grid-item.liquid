@@ -20,18 +20,17 @@ Here, for the sake of teaching, we will use 2 presentation options:
   {% assign on_sale = true %}
 {% endif %}
 
-<div class="{{ product-grid-item }}{% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}{% if product-grid-item == 'col-md-3' %}{% cycle 'last': '', '', '', ' last-in-row' %}{% elsif product-grid-item == 'col-md-4' %}{% cycle 'last': '', '', ' last-in-row' %}{% endif %}">
 
-  
+<div class="{{ product-grid-item }}{% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}{% if product-grid-item == 'col-md-4' %}{% elsif product-grid-item == 'col-md-4 col-md-offset-4' %}{% endif %}">
+  <div>
     <a href="{{ product.url | within: collection }}">
-      <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" class="img-fluid" />
+      <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" class="img-fluid img-circle" />
     </a>
-  
-  
-  <div class="prod-caption">
-      <a href="{{ product.url | within: collection }}">
-        {{ product.title }}
-      </a>
+  </div>
+  <div class="prod-caption text-xs-center">
+    <h4><a href="{{ product.url | within: collection }}">
+      {{ product.title }}
+    </a></h4>
   </div><!-- .prod-caption -->
   
 </div>

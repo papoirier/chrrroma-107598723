@@ -1,0 +1,8 @@
+<div class="col-md-3">
+    <ul role="navigation">
+    	<li class="subtitle">{{ linklists.[footer-nav].title }}</li>
+    	{% for link in linklists.[footer-nav].links %}
+    	<li><a href="{{ link.url }}" title="{{ link.title }}"{% if link.active %} class="active"{% endif %}>{{ link.title }}</a></li>
+    	{% endfor %}
+    </ul>
+</div>
